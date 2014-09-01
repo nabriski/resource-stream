@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Download</title>
+</head>
+<body>
+    <script>
+        var oReq = new XMLHttpRequest(),
+            lastPos = 0;
+
+        oReq.onreadystatechange = function(readyState){
+            if(oReq.readyState === 3 && oReq.response){
+               var data = oReq.responseText.substring(lastPos);
+               lastPos+=data.length;
+               console.log(data[0]);                 
+            }
+
+            if(oReq.readyState === 4){
+
+                console.log(oReq.responseText.length);
+                console.log("done");
+            }
+
+        }
+
+        oReq.open("GET", "/mozilla_story.mp4?_="+(new Date()).getMilliseconds(), true);
+        oReq.overrideMimeType('text\/plain; charset=US-ASCII');
+//        oReq.responseType = "arraybuffer";
+        oReq.send();	
+    </script>
+</body>
+</html>
