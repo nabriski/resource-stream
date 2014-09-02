@@ -13,20 +13,23 @@
             if(oReq.readyState === 3 && oReq.response){
                var data = oReq.responseText.substring(lastPos);
                lastPos+=data.length;
-               console.log(data[0]);                 
+               console.log([data[0],data[0].charCodeAt() & 0xff].join(" , "));                 
             }
 
             if(oReq.readyState === 4){
 
-                console.log(oReq.responseText.length);
+               console.log(oReq.responseText.length);
+               //console.log(oReq.response.byteLength);
+
+               //length should be 9064588 
                 console.log("done");
             }
 
         }
 
         oReq.open("GET", "/mozilla_story.mp4?_="+(new Date()).getMilliseconds(), true);
-        oReq.overrideMimeType('text\/plain; charset=US-ASCII');
-//        oReq.responseType = "arraybuffer";
+          oReq.overrideMimeType('text\/plain; charset=x-user-defined');
+          //oReq.responseType = "arraybuffer";
         oReq.send();	
     </script>
 </body>
