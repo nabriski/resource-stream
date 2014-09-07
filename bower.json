@@ -1,0 +1,23 @@
+{
+  "name": "resource-stream",
+  "main": "resource-stream.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/nabriski/resource-stream",
+  "authors": [
+    "itamar@nabriski.me"
+  ],
+  "description": "ajax stream for binary resources",
+  "keywords": [
+    "ajax",
+    "stream",
+    "binary"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
